@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício-06 - Javascript - </title>
+    <style>
+        body { 
+           font-family: Verdana, Geneva, Tahoma, sans-serif; 
+           background-color: rgb(43, 214, 226);
+        }
+        main {
+            background-color: rgb(255, 255, 255);
+            width: 300px;
+            margin: auto;
+            padding: 10px;
+            border-radius: 30px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.719); 
+        }
+
+        input[type="submit"] {
+        background-color: green;
+        color: white;
+        padding: 10px;
+        border-radius: 10px;
+        }
+
+        input[type="reset"] {
+        background-color: grey;
+        color: khaki;
+        padding: 10px;
+        border-radius: 10px;
+        
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Somador de números</h1>
+
+        <form action="salvar.php" method="get" onsubmit="return somar()">
+            <label for="n1">número 1</label> 
+            <input type="number" name="n1" id="n1" min="0" max="100" value="0"> 
+            <br>
+            <label for="n2">número2</label>
+            <input type="number" name="n2" id="n2" min="0" max="100" value="0">
+            <br>
+            <input type="submit" value="somar">
+            <input type="reset" value="limpar">
+        </form>
+        <p id="res">o resultado vai aparecer aqui</p>
+    </main>
+    <script>
+        function somar() {
+            let n1 = Number(document.getElementById("n1").value)
+            let n2 = Number (document.getElementById("n2").value)
+            // Efetuar a soma
+            let s = n1+n2
+            // Mostrar resultado na tela
+            let resultado = document.getElementById("res")
+            resultado.innerHTML=`somando ${n1} com ${n2} temos ${s}`
+            return false
+        }
+            
+        
+    </script>
+</body>
+</html>
